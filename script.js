@@ -1,0 +1,14 @@
+// Progressive enhancement: anchors, figures and all content also work without JavaScript.
+const links = [...document.querySelectorAll('nav a')];
+const sections = [document.querySelector('#top'), ...links.map(link => document.querySelector(link.hash))];
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    const active = entries.find(entry => entry.isIntersecting);
+    if (!active) return;
+    links.forEach(link => {
+      if (link.hash === `#${active.target.id}`) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+  sections.forEach(section => section && observer.observe(section));
+}
