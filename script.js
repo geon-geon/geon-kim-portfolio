@@ -18,3 +18,7 @@ window.addEventListener('message',event=>{
  if(event.origin!==location.origin||event.source!==demoFrame?.contentWindow)return;
  if(event.data?.type==='compass-height'&&Number.isFinite(event.data.height))demoFrame.style.height=Math.min(1500,Math.max(300,event.data.height))+'px';
 });
+const researchMenu=document.querySelector('.research-menu');
+researchMenu?.addEventListener('click',event=>{if(event.target.closest('a'))researchMenu.open=false;});
+document.addEventListener('click',event=>{if(researchMenu&&!researchMenu.contains(event.target))researchMenu.open=false;});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&researchMenu?.open){researchMenu.open=false;researchMenu.querySelector('summary').focus();}});
