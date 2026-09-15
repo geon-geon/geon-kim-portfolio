@@ -12,3 +12,9 @@ if ('IntersectionObserver' in window) {
   }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
   sections.forEach(section => section && observer.observe(section));
 }
+// Same-origin demo height follows its content, including narrow mobile layouts.
+const demoFrame=document.querySelector('.demo-frame iframe');
+window.addEventListener('message',event=>{
+ if(event.origin!==location.origin||event.source!==demoFrame?.contentWindow)return;
+ if(event.data?.type==='compass-height'&&Number.isFinite(event.data.height))demoFrame.style.height=Math.min(1500,Math.max(300,event.data.height))+'px';
+});
