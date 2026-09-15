@@ -25,11 +25,11 @@
 
 ## 출처
 
-연구·경력·학력은 사용자가 제공한 Master CV와 전공소개서에 근거합니다. 원본 PDF와 연락처는 배포하지 않습니다.
+연구·경력·학력은 저자의 자료를 바탕으로 구성했습니다. 내부 문서명·페이지 표기와 원본 PDF·연락처는 공개하지 않습니다.
 
-- `eeg-topography.webp`: 전공소개서 p.4, 낮은·높은 베타 대역 그림. 감마 결과는 본문에 근거.
-- `research-pipeline.webp`: 전공소개서 p.3 원문 파이프라인.
-- `eye-tracking.webp`: 전공소개서 p.5 초기·후기 처리 지표.
+- `eeg-topography.webp`: 낮은·높은 베타 대역의 연구 결과 그림.
+- `research-pipeline.webp`: 정보이론 지표 산출 파이프라인.
+- `eye-tracking.webp`: 초기·후기 읽기 처리 지표.
 - `compass-map.svg`: v0.40 API 응답의 실제 PCA 좌표·연결·검토 후보에서 생성한 벡터 시각화.
 - `portfolio-sans.woff2`: [Pretendard](https://github.com/orioncactus/pretendard) 가변 글꼴의 문자 부분집합. 변경한 글꼴 이름은 Portfolio Sans. SIL Open Font License는 `assets/FONT-LICENSE.txt`.
 
@@ -50,3 +50,7 @@
 ## 문구 정리
 
 슬로건형 제목을 연구 내용과 제품 기능을 직접 설명하는 표현으로 수정했습니다. 코리안리 업무 경력은 요청에 따라 포트폴리오에서 제외했습니다.
+
+## 금융연구 결과 중심 개편
+
+3번은 데이터 건수 대신 개발·검증 기간의 실제 회귀계수, 핵심 지수식, 분석모형과 q값을 제시합니다. `assets/finance-*.svg`는 논문 결과표의 계수를 Matplotlib으로 다시 그린 벡터 그림입니다. 지표마다 축의 단위·범위가 다릅니다. 당일 연관성으로 해석하며 인과효과나 매매성과로 표시하지 않습니다. 프로젝트 01·02·03은 공통 배지와 제목 컴포넌트를 사용합니다.
